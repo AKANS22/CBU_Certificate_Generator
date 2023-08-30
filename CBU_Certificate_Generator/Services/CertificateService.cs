@@ -17,14 +17,7 @@ namespace CBU_Certificate_Generator.Services
 
     public class CertificateService : ICertificateService
     {
-        private readonly string[] supportedImageExtensions = new string[] { ".jpg", ".png" };
-        private readonly string BucketName = "aws-cert-by-unify-assets";
-        private readonly long MaximumFileLimit = 838860800;
-        private readonly string CloudFrontUrl = "https://d1g9z8rmm06sqk.cloudfront.net/";
-
-
-        //for some reason, i've not figured the DI configuration for this yet
-        private readonly AmazonS3Client awsClient = new AmazonS3Client("AKIAVKBYAEFMO46O3JKV","kMl10hkPMqLahA9ioeCF+uOJYmsJeBiA/HViAZ2i", Amazon.RegionEndpoint.USEast1);
+        
         private readonly CertificateDBContext _certificateTemplate;
 
         public CertificateService(CertificateDBContext certificateTemplate)
